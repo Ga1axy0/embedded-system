@@ -1,0 +1,11 @@
+.\objects\system_stm32f10x.o: startup\system_stm32f10x.c
+.\objects\system_stm32f10x.o: startup\stm32f10x.h
+.\objects\system_stm32f10x.o: startup\core_cm3.h
+.\objects\system_stm32f10x.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\system_stm32f10x.o: startup\system_stm32f10x.h
+.\objects\system_stm32f10x.o: .\user\stm32f10x_conf.h
+.\objects\system_stm32f10x.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\objects\system_stm32f10x.o: .\Stm32lib\CMSIS\Core\CM3\stm32f10x.h
+.\objects\system_stm32f10x.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\objects\system_stm32f10x.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h
+.\objects\system_stm32f10x.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\misc.h

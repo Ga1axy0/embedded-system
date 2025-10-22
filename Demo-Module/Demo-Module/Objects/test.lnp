@@ -1,0 +1,16 @@
+--cpu Cortex-M3
+".\objects\system_stm32f10x.o"
+".\objects\core_cm3.o"
+".\objects\startup_stm32f10x_md.o"
+".\objects\misc.o"
+".\objects\stm32f10x_rcc.o"
+".\objects\stm32f10x_tim.o"
+".\objects\stm32f10x_gpio.o"
+".\objects\main.o"
+".\objects\gpio.o"
+".\objects\stm32f10x_it.o"
+".\objects\sys.o"
+--strict --scatter ".\Objects\test.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\Listings\test.map" -o .\Objects\test.axf
