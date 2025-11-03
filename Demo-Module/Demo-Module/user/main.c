@@ -29,6 +29,11 @@ extern void LED_Turn(void);
 extern void KEY_Init(void);
 extern u8 KEY_Scan(void);
 extern void led_stream(void);
+extern void Nixie_init(void);
+extern void Nixie_Display(int *num);
+extern void Nixie_test(void);
+extern void KeyBoard_init(void);
+extern int readKey(void);
 
 void BoardInit()
 {
@@ -43,14 +48,28 @@ int main(void)
 	//可以是函数，也可以直接写代码。建议使用函数调用方式，提高程序主题的可读性。
 	LED_Init();
 	KEY_Init();
-	
+
+  Nixie_init();
+  KeyBoard_init();
+
+  int a[4]={0};
+	int i = 0;
+
 	while(1)
 	{
 			//在这里写控制代码，例如循环点亮led，按键扫描等
 			//回顾第2课时的软件开发方法，巡回方式或前后台方式
-		t= KEY_Scan();
-		if (t == 1)
-			led_stream();
+      int tmp;
+      tmp = readKey();
+      Nixie_Display(a);
+      if(tmp != -1) {
+        a[3] = a[2];
+        a[2] = a[1];
+        a[1] = a[0];
+        a[0] = tmp;
+        Nixie_Display(a);
+      }
+
 	}
 	return 1;
 }

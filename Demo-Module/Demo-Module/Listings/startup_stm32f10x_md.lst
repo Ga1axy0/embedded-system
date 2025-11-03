@@ -471,11 +471,10 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=.\objects\startup_stm32f10x_md.d -o.\objects\startup_stm32f10x_md.
-o -I"C:\Users\28646\Desktop\embedded system\Demo-Module\Demo-Module\RTE" -IC:\K
-eil_v5.15\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include -IC:\Keil_v5.15\ARM\
-CMSIS\Include --predefine="__UVISION_VERSION SETA 515" --predefine="STM32F10X_H
-D SETA 1" --list=.\listings\startup_stm32f10x_md.lst Stm32lib\CMSIS\Core\CM3\st
-artup\arm\startup_stm32f10x_md.s
+o -IC:\Users\28646\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\1.1.0\Device\Incl
+ude --predefine="__UVISION_VERSION SETA 539" --predefine="STM32F10X_HD SETA 1" 
+--list=.\listings\startup_stm32f10x_md.lst Stm32lib\CMSIS\Core\CM3\startup\arm\
+startup_stm32f10x_md.s
 
 
 
