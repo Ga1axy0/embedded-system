@@ -34,6 +34,7 @@ extern void Nixie_Display(int *num);
 extern void Nixie_test(void);
 extern void KeyBoard_init(void);
 extern int readKey(void);
+extern void Keyborad_and_Display(int *a);
 
 void BoardInit()
 {
@@ -53,23 +54,10 @@ int main(void)
   KeyBoard_init();
 
   int a[4]={0};
-	int i = 0;
 
 	while(1)
 	{
-			//在这里写控制代码，例如循环点亮led，按键扫描等
-			//回顾第2课时的软件开发方法，巡回方式或前后台方式
-      int tmp;
-      tmp = readKey();
-      Nixie_Display(a);
-      if(tmp != -1) {
-        a[3] = a[2];
-        a[2] = a[1];
-        a[1] = a[0];
-        a[0] = tmp;
-        Nixie_Display(a);
-      }
-
+      Keyborad_and_Display(a);
 	}
 	return 1;
 }

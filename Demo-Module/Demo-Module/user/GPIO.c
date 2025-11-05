@@ -349,6 +349,19 @@ void Nixie_Display(int *num){
 	}
 }
 
+void Keyborad_and_Display(int *a){
+	int tmp;
+    tmp = readKey();
+    Nixie_Display(a);
+	if(tmp != -1) {
+		a[3] = a[2];
+		a[2] = a[1];
+		a[1] = a[0];
+		a[0] = tmp;
+		Nixie_Display(a);
+	}
+}
+
 
 
 int abc;
