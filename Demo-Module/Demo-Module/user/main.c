@@ -24,13 +24,16 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
+
+#define DISPLAY_REG 0x0024
+
 extern void NEG_init(void);
 extern void Keyborad_init(void); // 修正函数名: 与 NEG.c 中保持一致
 extern void Keyborad_with_Display(int *a); // 修正拼写: Keyborad
 extern void uart1_init(void);
 extern void RS232_test(void);
 extern void Modbus_InitRegs(void);
-void Modbus_Analyze(void);
+extern void Modbus_Analyze(void);
 void BoardInit()
 {
   /* System Clocks Configuration */
@@ -48,9 +51,11 @@ int main(void)
   RS232_test();
   int a[4]={1,2,3,4};
   Modbus_InitRegs();
+  NEG_init();
 	while(1)
 	{
     Modbus_Analyze();
+
 	}
 	return 1;
 

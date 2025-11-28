@@ -202,6 +202,8 @@ void Modbus_SendBuffer(u8 *buf, u16 len)
     USART_ITConfig(USART1, USART_IT_TXE, ENABLE);
 }
 
+extern void Neg_display(int *a); // 声明数码管显示函数
+
 // -----------------------------------------------------------------------------
 // Modbus parser / handler for 0x03 and 0x10
 // - Call when FrameFlag == 1 (frame timeout)
@@ -267,6 +269,16 @@ void Modbus_Analyze(void)
         for(u16 i=0;i<num;i++) {
             u16 v = ((u16)USART_Rxbuf[7 + 2*i] << 8) | USART_Rxbuf[7 + 2*i + 1];
             HoldReg[start + i] = v;
+            
+            // 如果写入的是特定寄存器（例如地址 0），则更新数码管显示
+            if ((start + i) == 0) {
+                int display_buf[4];
+                display_buf[0] = (v / 1000) % 10;
+                display_buf[1] = (v / 100) % 10;
+                display_buf[2] = (v / 10) % 10;
+                display_buf[3] = v % 10;
+                Neg_display(display_buf);
+            }
         }
 
         // Reply with slave id, func, start hi, start lo, qty hi, qty lo, CRC
