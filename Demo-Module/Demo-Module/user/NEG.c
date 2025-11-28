@@ -167,30 +167,27 @@ static const uint16_t SEG_MASK[16] = {
 
 
 
-// 扫描指定列(0..3)，返回对应键码 row*4+col 或 -1
 static int keyborad_scan_column(uint8_t col_index)
 {
-    if (col_index > 3) return -1; // 防御: 避免越界/未初始化导致移位未定义
+    if (col_index > 3) return -1;
     const uint16_t ROW_PINS = (GPIO_Pin_4 | GPIO_Pin_5 | GPIO_Pin_6 | GPIO_Pin_7);
-    const uint16_t COL_PIN  = (uint16_t)(1u << col_index); // PE0..PE3 bit 位
+    const uint16_t COL_PIN  = (uint16_t)(1u << col_index); 
 
-    // 所有行拉高准备逐行选通
     GPIO_SetBits(GPIOE, ROW_PINS);
     for (uint8_t r = 0; r < 4; r++) {
-        GPIO_SetBits(GPIOE, ROW_PINS);              // 先全高
-        GPIO_ResetBits(GPIOE, (GPIO_Pin_4 << r));   // 当前行拉低
-        for (volatile int d = 0; d < 300; ++d) { __NOP(); } // 极短稳定
-        uint16_t col_state = GPIO_ReadInputData(GPIOE) & COL_PIN; // 该列当前电平
-        if (col_state == 0) { // 低=按下
-            GPIO_ResetBits(GPIOE, ROW_PINS); // 空闲行低
+        GPIO_SetBits(GPIOE, ROW_PINS);              
+        GPIO_ResetBits(GPIOE, (GPIO_Pin_4 << r));  
+        for (volatile int d = 0; d < 300; ++d) { __NOP(); }
+        uint16_t col_state = GPIO_ReadInputData(GPIOE) & COL_PIN;
+        if (col_state == 0) { 
+            GPIO_ResetBits(GPIOE, ROW_PINS); 
             return r * 4 + col_index;
         }
     }
-    GPIO_ResetBits(GPIOE, ROW_PINS); // 空闲行低
+    GPIO_ResetBits(GPIOE, ROW_PINS); 
     return -1;
 }
 
-// 兼容旧调用路径: 若需要完整扫描所有列(极少用)，仍提供函数名。
 int keyborad_sran(void)
 {
     // 遍历所有列做一次列触发式扫描
@@ -201,7 +198,6 @@ int keyborad_sran(void)
     return -1;
 }
 
-// 兼容旧接口: 保留长按连发逻辑 (仍使用主动扫描函数), 但仅在中断置位后调用。
 int read_Key(void){
 	// 组合行为: 短按=松开时上报一次; 长按=等待一段时间后开始持续上报
 	static int key_down = 0;       // 是否处于按下状态

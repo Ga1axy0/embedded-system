@@ -860,7 +860,7 @@ void USART_ClearFlag(USART_TypeDef* USARTx, uint16_t USART_FLAG)
   */
 ITStatus USART_GetITStatus(USART_TypeDef* USARTx, uint16_t USART_IT)
 {
-  uint32_t bitpos = 0x00, itmask = 0x00, usartreg = 0x00;
+		uint32_t bitpos = 0x00, itmask = 0x00, usartreg = 0x00;
   ITStatus bitstatus = RESET;
   /* Check the parameters */
   assert_param(IS_USART_ALL_PERIPH(USARTx));

@@ -457,6 +457,11 @@
               <FileType>1</FileType>
               <FilePath>.\stddriver\src\stm32f10x_exti.c</FilePath>
             </File>
+            <File>
+              <FileName>stm32f10x_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\stddriver\src\stm32f10x_usart.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -481,6 +486,11 @@
               <FileName>NEG.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\user\NEG.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\user\UART.c</FilePath>
             </File>
           </Files>
         </Group>

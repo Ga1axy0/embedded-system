@@ -27,6 +27,10 @@
 extern void NEG_init(void);
 extern void Keyborad_init(void); // 修正函数名: 与 NEG.c 中保持一致
 extern void Keyborad_with_Display(int *a); // 修正拼写: Keyborad
+extern void uart1_init(void);
+extern void RS232_test(void);
+extern void Modbus_InitRegs(void);
+void Modbus_Analyze(void);
 void BoardInit()
 {
   /* System Clocks Configuration */
@@ -34,20 +38,22 @@ void BoardInit()
 }
 
 int main(void)
-{
+	{
 	u8 t=0;
 	// 在这里写初始化代码，例如初始化按键连接的引脚为输入，led连接的引脚为输出
 	//可以是函数，也可以直接写代码。建议使用函数调用方式，提高程序主题的可读性。
-  NEG_init();
-  Keyborad_init();
+  
+  uart1_init();
 
+  RS232_test();
   int a[4]={1,2,3,4};
-
+  Modbus_InitRegs();
 	while(1)
 	{
-  Keyborad_with_Display(a); // 中断驱动更新 + 定时器自动扫描显示
+    Modbus_Analyze();
 	}
 	return 1;
+
 }
 
 
