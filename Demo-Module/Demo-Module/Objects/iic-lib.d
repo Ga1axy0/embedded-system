@@ -1,0 +1,12 @@
+.\objects\iic-lib.o: user\IIC-lib.c
+.\objects\iic-lib.o: .\Stm32lib\CMSIS\Core\CM3\stm32f10x.h
+.\objects\iic-lib.o: .\Stm32lib\CMSIS\Core\CM3\core_cm3.h
+.\objects\iic-lib.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\iic-lib.o: .\Stm32lib\CMSIS\Core\CM3\system_stm32f10x.h
+.\objects\iic-lib.o: .\user\stm32f10x_conf.h
+.\objects\iic-lib.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
+.\objects\iic-lib.o: .\Stm32lib\CMSIS\Core\CM3\stm32f10x.h
+.\objects\iic-lib.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_rcc.h
+.\objects\iic-lib.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_tim.h
+.\objects\iic-lib.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\misc.h
+.\objects\iic-lib.o: .\Stm32lib\STM32F10x_StdPeriph_Driver\inc\stm32f10x_i2c.h

@@ -34,11 +34,23 @@ extern void uart1_init(void);
 extern void RS232_test(void);
 extern void Modbus_InitRegs(void);
 extern void Modbus_Analyze(void);
+
+extern void IIC_Configuration(void);
+extern void IIC_test(void);
+
+extern void SPI_Configuration(void);
+extern void SPI_Flash_ReadID(uint8_t *id);
+extern void SPI_Flash_WriteEnable(void);
+extern void SPI_Flash_WaitForWriteEnd(void);
+extern void SPI_Flash_PageWrite(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteToWrite);
+extern void SPI_Flash_ReadBuffer(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRead);
 void BoardInit()
 {
   /* System Clocks Configuration */
 	SystemInit();
 }
+
+extern u8 writeflag ;
 
 int main(void)
 	{
@@ -46,16 +58,17 @@ int main(void)
 	// 在这里写初始化代码，例如初始化按键连接的引脚为输入，led连接的引脚为输出
 	//可以是函数，也可以直接写代码。建议使用函数调用方式，提高程序主题的可读性。
   
-  uart1_init();
+  SPI_Configuration();
 
-  RS232_test();
-  int a[4]={1,2,3,4};
-  Modbus_InitRegs();
-  NEG_init();
+  uint8_t id[3]={0};
+  SPI_Flash_ReadID((uint8_t *)id);
+  SPI_Flash_WriteEnable();
 	while(1)
 	{
-    Modbus_Analyze();
-
+    SPI_Flash_PageWrite((uint8_t *)"Hello, STM32 SPI Flash!", 0x000000, 22);
+    uint8_t readbuf[22]={0};
+    SPI_Flash_WaitForWriteEnd();
+    SPI_Flash_ReadBuffer(readbuf, 0x000000, 22);
 	}
 	return 1;
 
