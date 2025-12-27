@@ -1,7 +1,7 @@
 .\obj\iic-lib.o: ..\src\IIC-lib.c
 .\obj\iic-lib.o: ..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h
 .\obj\iic-lib.o: ..\..\Libraries\CMSIS\Core\CM3\core_cm3.h
-.\obj\iic-lib.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\iic-lib.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\iic-lib.o: ..\..\Libraries\CMSIS\Core\CM3\system_stm32f10x.h
 .\obj\iic-lib.o: ..\inc\stm32f10x_conf.h
 .\obj\iic-lib.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h

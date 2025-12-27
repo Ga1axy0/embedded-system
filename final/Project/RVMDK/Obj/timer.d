@@ -2,7 +2,7 @@
 .\obj\timer.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32F10x_tim.h
 .\obj\timer.o: ..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h
 .\obj\timer.o: ..\..\Libraries\CMSIS\Core\CM3\core_cm3.h
-.\obj\timer.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\timer.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\timer.o: ..\..\Libraries\CMSIS\Core\CM3\system_stm32f10x.h
 .\obj\timer.o: ..\inc\stm32f10x_conf.h
 .\obj\timer.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h

@@ -2,7 +2,7 @@
 .\obj\exti.o: ..\inc\main.h
 .\obj\exti.o: ..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h
 .\obj\exti.o: ..\..\Libraries\CMSIS\Core\CM3\core_cm3.h
-.\obj\exti.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\exti.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\exti.o: ..\..\Libraries\CMSIS\Core\CM3\system_stm32f10x.h
 .\obj\exti.o: ..\inc\stm32f10x_conf.h
 .\obj\exti.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h
@@ -15,7 +15,7 @@
 .\obj\exti.o: ..\inc\wdg.h
 .\obj\exti.o: ..\inc\dma.h
 .\obj\exti.o: ..\inc\lcd.h
-.\obj\exti.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdlib.h
+.\obj\exti.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdlib.h
 .\obj\exti.o: ..\inc\EXTI.h
 .\obj\exti.o: ..\inc\Register_config.h
 .\obj\exti.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_exti.h

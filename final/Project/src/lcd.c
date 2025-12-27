@@ -348,6 +348,7 @@ void LCD_Scan_Dir(u8 dir)
 				break;	 
 		}
 		dirreg=0X36;
+		regval|=0X08;
  		LCD_WriteReg(dirreg,regval);
 
   }
@@ -1119,6 +1120,107 @@ void showTouch()
 		sprintf(showstr,"Press at:%4d y%4d   ",xScreen,yScreen);
 	  LCD_ShowString(45,0,240,12,12,showstr); 
 		LCD_ShowString(xScreen-2,yScreen-5,240,12,12,"+"); //+中心点对坐标的偏移为2，5
+}
+
+#define chessboard_start_x 10
+#define chessboard_start_y 10
+#define chessboard_end_x  230
+#define chessboard_end_y  230
+
+#define chessboard_size 5
+#define chessboard_interval  ( (chessboard_end_x - chessboard_start_x) / chessboard_size )
+
+
+void draw_chess_boradder()
+{
+	//fill background
+	LCD_Fill(QPSTARTX , QPSTARTY , QPSIZEX , QPSIZEY , BROWN) ;
+	//draw edge
+	LCD_DrawLine(chessboard_start_x , chessboard_start_y , chessboard_end_x , chessboard_start_y ) ;
+	LCD_DrawLine(chessboard_start_x , chessboard_start_y , chessboard_start_x , chessboard_end_y ) ;
+	LCD_DrawLine(chessboard_end_x , chessboard_start_y , chessboard_end_x , chessboard_end_y ) ;
+	LCD_DrawLine(chessboard_start_x , chessboard_end_y , chessboard_end_x , chessboard_end_y ) ;
+	//draw inside grid
+	
+
+
+
+	u16 i ;
+		for ( i = chessboard_start_x ; i <= chessboard_end_x ; i += chessboard_interval)
+		{
+				LCD_DrawLine(i, chessboard_start_y , i , chessboard_end_y ) ;
+		}
+		for ( i = chessboard_start_y ; i <= chessboard_end_y ; i += chessboard_interval)
+		{
+				LCD_DrawLine(chessboard_start_x , i , chessboard_end_x , i ) ;
+		}
+}
+void LCD_Draw_filled_Circle(u16 x0,u16 y0,u8 r,u16 color)
+{
+	int a,b;
+	int di;
+	a=0;b=r;	  
+	di=3-(r<<1);             //判断下个点位置的标志
+	while(a<=b)
+	{
+		LCD_Fill(x0-a,y0-b,x0+a,y0-b,color);
+		LCD_Fill(x0-a,y0+b,x0+a,y0+b,color);
+		LCD_Fill(x0-b,y0-a,x0+b,y0-a,color);
+		LCD_Fill(x0-b,y0+a,x0+b,y0+a,color);
+		a++;
+		//使用Bresenham算法画圆     
+		if(di<0)di +=4*a+6;	  
+		else
+		{
+			di+=10+4*(a-b);   
+			b--;
+		} 						    
+	}
+}
+
+void draw_chess_piece(u8 x_index , u8 y_index,u16 color)
+{
+	LCD_Draw_filled_Circle(chessboard_start_x  + x_index * chessboard_interval , chessboard_start_y  + y_index * chessboard_interval , 10, color) ;
+}
+
+void draw_initial_chess_piece(){
+	draw_chess_piece(0,0, BLACK);
+	draw_chess_piece(0,1, BLACK);
+	draw_chess_piece(0,2, BLACK);
+	draw_chess_piece(0,3, BLACK);
+	draw_chess_piece(0,4, BLACK);
+
+	draw_chess_piece(4,0, WHITE);
+	draw_chess_piece(4,1, WHITE);
+	draw_chess_piece(4,2, WHITE);
+	draw_chess_piece(4,3, WHITE);
+	draw_chess_piece(4,4, WHITE);
+
+}
+
+int chess[chessboard_size][chessboard_size] = {0}; //0 no chess, 1 black, 2 white
+
+void chess_game_init()
+{
+	draw_chess_boradder();
+	draw_initial_chess_piece();
+	for(int i = 0 ; i < chessboard_size ; i ++)
+	{
+		chess[0][i] = 1;
+		chess[4][i] = 2;
+	}
+}
+
+int picked_chess[2] = {-1,-1}; //x,y
+
+void chess_picked(){
+	picked_chess[0] = (xScreen - chessboard_start_x + chessboard_interval/2) / chessboard_interval ;
+	picked_chess[1] = (yScreen - chessboard_start_y + chessboard_interval/2) / chessboard_interval ;
+}
+
+void chess_game_play()
+{
+	showTouch
 }
 
 

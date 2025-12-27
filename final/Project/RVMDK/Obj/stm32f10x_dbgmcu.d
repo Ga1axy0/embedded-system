@@ -2,7 +2,7 @@
 .\obj\stm32f10x_dbgmcu.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_dbgmcu.h
 .\obj\stm32f10x_dbgmcu.o: ..\..\Libraries\CMSIS\Core\CM3\stm32f10x.h
 .\obj\stm32f10x_dbgmcu.o: ..\..\Libraries\CMSIS\Core\CM3\core_cm3.h
-.\obj\stm32f10x_dbgmcu.o: D:\Keil_v5\ARM\ARMCC\bin\..\include\stdint.h
+.\obj\stm32f10x_dbgmcu.o: C:\Keil_v5.15\ARM\ARMCC\Bin\..\include\stdint.h
 .\obj\stm32f10x_dbgmcu.o: ..\..\Libraries\CMSIS\Core\CM3\system_stm32f10x.h
 .\obj\stm32f10x_dbgmcu.o: ..\inc\stm32f10x_conf.h
 .\obj\stm32f10x_dbgmcu.o: ..\..\Libraries\STM32F10x_StdPeriph_Driver\inc\stm32f10x_gpio.h

@@ -2,13 +2,34 @@
 <body>
 <pre>
 <h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.15
+Copyright (C) 2015 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information:  ,  , LIC=V85FJ-UCM76-177RR-K69FN-D3ATF-RAMIX
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Professional  Version: 5.15.0
+Toolchain Path:  C:\Keil_v5.15\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.05 update 2 (build 169)
+Assembler:       Armasm.exe V5.05 update 2 (build 169)
+Linker/Locator:  ArmLink.exe V5.05 update 2 (build 169)
+Library Manager: ArmAr.exe V5.05 update 2 (build 169)
+Hex Converter:   FromElf.exe V5.05 update 2 (build 169)
+CPU DLL:         SARMCM3.DLL V5.15.0
+Dialog DLL:      DCM.DLL V1.13.2.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.15.0_KEIL
+Dialog DLL:      TCM.DLL V1.14.5.0
+ 
 <h2>Project:</h2>
-E:\2025嵌入式系统\触摸屏校准\Project\RVMDK\EID-V2.uvprojx
-Project File Date:  12/02/2025
+C:\Users\28646\Desktop\embedded system\final\Project\RVMDK\EID-V2.uvprojx
+Project File Date:  12/12/2025
 
 <h2>Output:</h2>
+*** Using Compiler 'V5.05 update 2 (build 169)', folder: 'C:\Keil_v5.15\ARM\ARMCC\Bin'
 Build target 'STM3210E-EVAL'
 compiling lcd.c...
+..\src\lcd.h(201): warning:  #1295-D: Deprecated declaration draw_chess_boradder - give arg types
+  void draw_chess_boradder();
 ..\src\lcd.c(29): warning:  #177-D: variable "i" was declared but never referenced
         int i,j ;
 ..\src\lcd.c(29): warning:  #177-D: variable "j" was declared but never referenced
@@ -17,107 +38,58 @@ compiling lcd.c...
   }              
 ..\src\lcd.c(319): warning:  #177-D: variable "temp" was declared but never referenced
         u16 temp;  
-..\src\lcd.c(431): warning:  #177-D: variable "hsareg" was declared but never referenced
+..\src\lcd.c(432): warning:  #177-D: variable "hsareg" was declared but never referenced
         u8 hsareg,heareg,vsareg,veareg;
-..\src\lcd.c(431): warning:  #177-D: variable "heareg" was declared but never referenced
+..\src\lcd.c(432): warning:  #177-D: variable "heareg" was declared but never referenced
         u8 hsareg,heareg,vsareg,veareg;
-..\src\lcd.c(431): warning:  #177-D: variable "vsareg" was declared but never referenced
+..\src\lcd.c(432): warning:  #177-D: variable "vsareg" was declared but never referenced
         u8 hsareg,heareg,vsareg,veareg;
-..\src\lcd.c(431): warning:  #177-D: variable "veareg" was declared but never referenced
+..\src\lcd.c(432): warning:  #177-D: variable "veareg" was declared but never referenced
         u8 hsareg,heareg,vsareg,veareg;
-..\src\lcd.c(432): warning:  #177-D: variable "hsaval" was declared but never referenced
+..\src\lcd.c(433): warning:  #177-D: variable "hsaval" was declared but never referenced
         u16 hsaval,heaval,vsaval,veaval; 
-..\src\lcd.c(432): warning:  #177-D: variable "heaval" was declared but never referenced
+..\src\lcd.c(433): warning:  #177-D: variable "heaval" was declared but never referenced
         u16 hsaval,heaval,vsaval,veaval; 
-..\src\lcd.c(432): warning:  #177-D: variable "vsaval" was declared but never referenced
+..\src\lcd.c(433): warning:  #177-D: variable "vsaval" was declared but never referenced
         u16 hsaval,heaval,vsaval,veaval; 
-..\src\lcd.c(432): warning:  #177-D: variable "veaval" was declared but never referenced
+..\src\lcd.c(433): warning:  #177-D: variable "veaval" was declared but never referenced
         u16 hsaval,heaval,vsaval,veaval; 
-..\src\lcd.c(588): warning:  #177-D: variable "temp" was declared but never referenced
+..\src\lcd.c(589): warning:  #177-D: variable "temp" was declared but never referenced
         u16 temp;
-..\src\lcd.c(823): warning:  #177-D: variable "SPI_InitStructure" was declared but never referenced
+..\src\lcd.c(824): warning:  #177-D: variable "SPI_InitStructure" was declared but never referenced
            SPI_InitTypeDef  SPI_InitStructure;
-..\src\lcd.c(917): warning:  #177-D: variable "j" was declared but never referenced
+..\src\lcd.c(918): warning:  #177-D: variable "j" was declared but never referenced
                  u16            i,j,k;
-..\src\lcd.c(917): warning:  #177-D: variable "k" was declared but never referenced
+..\src\lcd.c(918): warning:  #177-D: variable "k" was declared but never referenced
                  u16            i,j,k;
-..\src\lcd.c(940): warning:  #177-D: variable "j" was declared but never referenced
+..\src\lcd.c(941): warning:  #177-D: variable "j" was declared but never referenced
         u16 i,j,k;
-..\src\lcd.c(940): warning:  #177-D: variable "k" was declared but never referenced
+..\src\lcd.c(941): warning:  #177-D: variable "k" was declared but never referenced
         u16 i,j,k;
-..\src\lcd.c(1092): warning:  #223-D: function "sprintf" declared implicitly
+..\src\lcd.c(1093): warning:  #223-D: function "sprintf" declared implicitly
                                         sprintf(showstr,"TouchAD, x:%4d y%4d   ",xScreenAD,yScreenAD);
-..\src\lcd.c(1093): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\src\lcd.c(1094): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
                                         LCD_ShowString(45,12,240,12,12,showstr);
-..\src\lcd.c(1105): warning:  #223-D: function "sprintf" declared implicitly
+..\src\lcd.c(1106): warning:  #223-D: function "sprintf" declared implicitly
                                         sprintf(showstr,"TouchAD, x:%4d y%4d   ",xScreenAD,yScreenAD);
-..\src\lcd.c(1106): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\src\lcd.c(1107): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
                                         LCD_ShowString(45,24,240,12,12,showstr);
-..\src\lcd.c(1119): warning:  #223-D: function "sprintf" declared implicitly
+..\src\lcd.c(1120): warning:  #223-D: function "sprintf" declared implicitly
                 sprintf(showstr,"Press at:%4d y%4d   ",xScreen,yScreen);
-..\src\lcd.c(1120): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
+..\src\lcd.c(1121): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
           LCD_ShowString(45,0,240,12,12,showstr); 
-..\src\lcd.c(999): warning:  #177-D: function "getPos" was declared but never referenced
+..\src\lcd.c(1000): warning:  #177-D: function "getPos" was declared but never referenced
   static void getPos(u16 xScreen, u16 yScreen) {
-..\src\lcd.c: 25 warnings, 0 errors
+..\src\lcd.c: 26 warnings, 0 errors
 linking...
-Program Size: Code=8764 RO-data=6480 RW-data=144 ZI-data=960  
-".\Obj\STM3210E-EVAL.axf" - 0 Error(s), 25 Warning(s).
-Load "E:\\2025嵌入式系统\\触摸屏校准\\Project\\RVMDK\\Obj\\STM3210E-EVAL.axf" 
-Erase Done.
-Programming Done.
-Verify OK.
+Program Size: Code=7272 RO-data=336 RW-data=144 ZI-data=960  
+".\Obj\STM3210E-EVAL.axf" - 0 Error(s), 26 Warning(s).
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\28646\Desktop\embedded system\final\Project\RVMDK\RTE
+  C:\Keil_v5.15\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
 </pre>
 </body>
 </html>
-: warning:  #177-D: variable "j" was declared but never referenced
-        u16 i,j,k;
-..\src\lcd.c(940): warning:  #177-D: variable "k" was declared but never referenced
-        u16 i,j,k;
-..\src\lcd.c(1092): warning:  #223-D: function "sprintf" declared implicitly
-                                        sprintf(showstr,"TouchAD, x:%4d y%4d   ",xScreenAD,yScreenAD);
-..\src\lcd.c(1093): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-                                        LCD_ShowString(45,12,240,12,12,showstr);
-..\src\lcd.c(1105): warning:  #223-D: function "sprintf" declared implicitly
-                                        sprintf(showstr,"TouchAD, x:%4d y%4d   ",xScreenAD,yScreenAD);
-..\src\lcd.c(1106): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-                                        LCD_ShowString(45,24,240,12,12,showstr);
-..\src\lcd.c(1119): warning:  #223-D: function "sprintf" declared implicitly
-                sprintf(showstr,"Press at:%4d y%4d   ",xScreen,yScreen);
-..\src\lcd.c(1120): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "u8 *"
-          LCD_ShowString(45,0,240,12,12,showstr); 
-..\src\lcd.c(999): warning:  #177-D: function "getPos" was declared but never referenced
-  static void getPos(u16 xScreen, u16 yScreen) {
-..\src\lcd.c: 25 warnings, 0 errors
-compiling stm32f10x_it.c...
-compiling stm32f10x_tim.c...
-compiling misc.c...
-compiling stm32f10x_gpio.c...
-compiling stm32f10x_rcc.c...
-compiling stm32f10x_adc.c...
-compiling stm32f10x_bkp.c...
-compiling stm32f10x_can.c...
-compiling stm32f10x_dac.c...
-compiling stm32f10x_i2c.c...
-compiling stm32f10x_usart.c...
-compiling stm32f10x_fsmc.c...
-compiling stm32f10x_spi.c...
-compiling stm32f10x_exti.c...
-compiling stm32f10x_rtc.c...
-compiling stm32f10x_pwr.c...
-compiling stm32f10x_dma.c...
-compiling stm32f10x_crc.c...
-compiling stm32f10x_dbgmcu.c...
-compiling stm32f10x_flash.c...
-compiling stm32f10x_iwdg.c...
-compiling stm32f10x_sdio.c...
-compiling stm32f10x_wwdg.c...
-assembling startup_stm32f10x_hd.s...
-compiling system_stm32f10x.c...
-linking...
-Program Size: Code=8768 RO-data=6480 RW-data=144 ZI-data=960  
-".\Obj\STM3210E-EVAL.axf" - 0 Error(s), 38 Warning(s).
-Load "E:\\2025嵌入式系统\\触摸屏校准\\Project\\RVMDK\\Obj\\STM3210E-EVAL.axf" 
-Erase Done.
-Programming Done.
-Verify OK.

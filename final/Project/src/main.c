@@ -24,6 +24,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f10x.h"
+#include "lcd.h"
 
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
@@ -47,11 +48,14 @@ int main(void)
 	LCD_Configuration();
 	Touch_Init();
 	LCD_Init();
-	Touch_Check();
+	//Touch_Check();
+
+  draw_chess_boradder();
+  draw_initial_chess_piece();
 	
 	while(1)
-	{
-			showTouch();
+	{	
+     // showTouch();
 	}
 }
 
